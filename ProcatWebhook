@@ -90,22 +90,22 @@ local data1 = {
                     ["inline"] = false
                 },
                 {
-                    ["name"] = " :money_mouth:Huge Pets:money_mouth: ",
+                    ["name"] = " :cat:Huge Pets:cat: ",
                     ["value"] = "```>>> "..hugeamount.."```",
                     ["inline"] = true
                 },
                 {
-                    ["name"] = " :money_mouth:Exclusive Pets:money_mouth: ",
+                    ["name"] = " :cat:Exclusive Pets:cat: ",
                     ["value"] = "```>>> "..exclusiveamount.."```",
                     ["inline"] = true
                 },
                 {
-                    ["name"] = " :money_mouth:Event Pets:money_mouth: ",
+                    ["name"] = " :cat:Event Pets:cat: ",
                     ["value"] = "```>>> "..eventamount.."```",
                     ["inline"] = true
                 },
                 {
-                    ["name"] = " :money_mouth:Secret Pets:money_mouth: ",
+                    ["name"] = " :cat:Secret Pets:cat: ",
                     ["value"] = "```>>> "..secretamount.."```",
                     ["inline"] = true
                 },
