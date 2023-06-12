@@ -24,7 +24,7 @@ local data1 = {
             ["type"] = "rich",
             ["color"] = tonumber(0xBE30F7),
             ["thumbnail"] = {
-                ["url"] = https://cdn.discordapp.com/attachments/1117066197540802652/1117770741866307644/IMG_8500.gif,
+                ["url"] = "https://cdn.discordapp.com/attachments/1117066197540802652/1117770741866307644/IMG_8500.gif",
                 ["height"] = 420,
                 ["width"] = 420
             },
